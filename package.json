@@ -1,15 +1,15 @@
 {
-  "name": "docx",
-  "version": "0.1.0",
+  "name": "docx-workspace",
   "private": true,
   "workspaces": [
-    "client",
-    "server",
-    "shared"
+    "docx-core/*",
+    "docx-platforms/*"
   ],
   "scripts": {
-    "dev": "concurrently \"cd client && npm run dev\" \"cd server && npm run dev\"",
-    "build": "concurrently \"cd client && npm run build\" \"cd server && npm run build\"",
-    "test": "npm run test --workspaces"
+    "web:dev": "cd docx-platforms/web && npm run dev",
+    "desktop:dev": "cd docx-platforms/desktop && npm run dev",
+    "mobile:ios": "cd docx-platforms/mobile/DocXMobile && npm run ios",
+    "mobile:android": "cd docx-platforms/mobile/DocXMobile && npm run android",
+    "cli:dev": "cd docx-platforms/cli && npm run dev"
   }
 }
